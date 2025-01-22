@@ -5,7 +5,6 @@ import {
   CardTitle,
   CardContent,
 } from "../components/ui/card";
-import { title } from "process";
 
 export default function TechnicalSkills() {
   const skills = [

@@ -2,7 +2,6 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ModeToggle } from "@/components/ui/toggle";
 import TechnicalSkills from "./TechnicalSkills";
 import Projects from "./Projects";
@@ -10,10 +9,6 @@ import AboutMe from "./Aboutme";
 import ContactMe from "./Contact";
 import Experience from "./Experiance";
 import { AiOutlineDownload } from "react-icons/ai";
-// import resume from "../../public/";
-// import { cn } from "@/lib/utils";
-// import Image from "next/image";
-// import myImage from "../../public/goodphoto.jpg";
 
 export default function Home() {
   return (
@@ -58,32 +53,14 @@ export default function Home() {
         <div className="text-center space-y-6">
           {/* Heading Section */}
           <h1 className="text-4xl font-extrabold sm:text-6xl">
-            <span className="animate-blink text-purple-600">Hello</span>, I'm{" "}
+            <span className="animate-blink text-purple-600">Hello</span>, Im{" "}
             <span className="text-purple-600">Mallam Yashwanth</span>
           </h1>
           <p className="text-lg max-w-2xl mx-auto">
             A passionate developer focused on creating beautiful and functional
-            user experiences. Let's connect and build something amazing
-            together!
+            user experiences. Lets connect and build something amazing together!
           </p>
         </div>
-
-        {/* <div className="flex justify-center space-x-4">
-          <Card className="max-w-sm mx-auto">
-            <CardHeader className="flex items-center justify-center">
-              <CardTitle className="text-center">
-                Full Stack Developer
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Image
-                src={myImage}
-                alt="Developer Profile"
-                className="w-45 h-50 rounded-lg"
-              />
-            </CardContent>
-          </Card>
-        </div> */}
       </div>
       <div className="flex justify-center items-center min-h-screen ">
         <TechnicalSkills />
