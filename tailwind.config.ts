@@ -56,9 +56,14 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
+        "spin-once": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         blink: "blink 1.5s steps(2, start) infinite",
+        "spin-once": "spin-once 0.5s ease-in-out",
       },
       borderRadius: {
         lg: "var(--radius)",
