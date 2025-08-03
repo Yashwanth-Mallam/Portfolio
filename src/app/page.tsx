@@ -11,7 +11,7 @@ import AboutMe from "./Aboutme";
 import ContactMe from "./Contact";
 import Experience from "./Experiance";
 import { AiOutlineDownload } from "react-icons/ai";
-// import DecorationBubbles from "./Decoration";
+import ParticlesBackground from "./particles";
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -39,13 +39,15 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col m-2 relative">
       <div className="max-w-full p-6 flex items-center justify-between">
+        <ParticlesBackground />
         {/* Avatar Section */}
         <div className="flex items-center">
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarImage src="/logos/profile.png" alt="Mallam Yashwanth" />
             <AvatarFallback>MY</AvatarFallback>
           </Avatar>
         </div>
+
         {/* Buttons Section */}
         <div className="flex items-center space-x-4">
           <Button
@@ -81,7 +83,7 @@ export default function Home() {
           {/* Image */}
           <div className="w-60 h-60 sm:w-72 sm:h-72 rounded-xl overflow-hidden border-4 border-purple-600 shadow-lg relative">
             <Image
-              src="/logos/loading.png"
+              src="/logos/profile.png"
               alt="Mallam Yashwanth"
               fill
               style={{ objectFit: "cover" }}

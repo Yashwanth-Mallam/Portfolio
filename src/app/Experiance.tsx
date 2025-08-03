@@ -85,7 +85,14 @@ export default function ExperienceTimeline() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <h2 className="text-3xl font-bold  mb-8 text-center">My Experience</h2>
-
+      <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-8 animate-fadeIn">
+        Throughout my journey, I have consistently pushed my limits, embraced
+        new challenges, and dedicated countless hours to mastering my craft.
+        Every project and collaboration has been an opportunity to learn, grow,
+        and deliver impactful results. My experiences reflect not just my
+        technical expertise, but my commitment to excellence and my passion for
+        turning ideas into reality.
+      </p>
       <div className="relative">
         {/* Timeline vertical line */}
         <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-purple-300" />

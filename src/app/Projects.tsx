@@ -7,7 +7,14 @@ import {
   CardTitle,
   CardContent,
 } from "../components/ui/card";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { Badge } from "@/components/ui/badge";
+import {
+  FaExternalLinkAlt,
+  FaGithub,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
+
 import Image from "next/image";
 
 export default function Projects() {
@@ -88,56 +95,83 @@ export default function Projects() {
 
   return (
     <div className="p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-center ">My Projects</h1>
+      <h1 className="text-3xl font-bold text-center">My Projects</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center ">
+      {/* Intro Paragraph */}
+      <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-8 animate-fadeIn">
+        Each project reflects my passion for crafting solutions that blend
+        creativity with functionality. From sleek frontend designs to secure
+        full-stack systems, I focus on delivering high-quality, user-friendly
+        experiences while maintaining clean, scalable code.
+      </p>
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
         {projects.map((project, index) => {
           const isExpanded = expanded === index;
-          const shortDesc = project.description.slice(0, 180) + "...";
+          const shortDesc = project.description.slice(0, 160) + "...";
 
           return (
             <Card
               key={index}
-              className="w-full max-w-sm shadow-lg border-2 border-purple-500 hover:shadow-xl hover:shadow-purple-500/50 transition duration-300"
+              className="w-full max-w-sm shadow-lg border border-purple-500 hover:shadow-xl hover:shadow-purple-500/50 transition duration-300 hover:scale-105"
             >
-              <CardHeader className="flex flex-col items-center text-center space-y-2">
+              {/* Gradient Header */}
+              <CardHeader className="flex flex-col items-center text-center space-y-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-t-lg">
                 <Image
                   src={project.logo}
                   alt={`${project.title} Logo`}
                   width={64}
                   height={64}
-                  className="object-contain rounded-full border border-purple-400 transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-md"
+                  className="object-contain rounded-full border border-white shadow-md transition-transform duration-300 hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = "https://via.placeholder.com/64?text=Logo";
                   }}
                 />
-
-                <CardTitle className="text-xl font-semibold text-white-700">
+                <CardTitle className="text-xl font-semibold">
                   {project.title}
                 </CardTitle>
-                <p className="text-sm italic">
-                  <span className="font-semibold">Start:</span>{" "}
-                  {project.startDate} <br />
-                  <span className="font-semibold">End:</span> {project.endDate}
+                <p className="text-xs opacity-80">
+                  {project.startDate} - {project.endDate}
                 </p>
               </CardHeader>
 
-              <CardContent className="space-y-3 px-4 pb-5 text-sm text-justify">
+              {/* Card Content */}
+              <CardContent className="space-y-3 px-4 pb-5 text-sm">
+                {/* Type */}
                 <p>
                   <span className="font-semibold">Type:</span>{" "}
                   {project.projectType}
                 </p>
-                <p>
-                  <span className="font-semibold">Tech Stack:</span>{" "}
-                  {project.techStack.join(", ")}
-                </p>
-                <p>
-                  <span className="font-semibold">Languages:</span>{" "}
-                  {project.languages.join(", ")}
-                </p>
 
-                {/* Links (after languages) */}
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech, i) => (
+                    <Badge
+                      key={i}
+                      variant="secondary"
+                      className="bg-purple-200 text-purple-800"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Languages */}
+                <div className="flex flex-wrap gap-2">
+                  {project.languages.map((lang, i) => (
+                    <Badge
+                      key={i}
+                      variant="outline"
+                      className="border-purple-400 text-purple-600"
+                    >
+                      {lang}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Links */}
                 <div className="flex gap-4 mt-1">
                   <a
                     href={project.deployedLink}
@@ -151,22 +185,30 @@ export default function Projects() {
                     href={project.repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className=" hover:text-black flex items-center gap-1"
+                    className="hover:text-gray-700 flex items-center gap-1"
                   >
                     GitHub <FaGithub className="text-sm" />
                   </a>
                 </div>
 
-                {/* Description with Show More / Less */}
+                {/* Description */}
                 <div>
                   <p className="mt-2">
                     {isExpanded ? project.description : shortDesc}
                   </p>
                   <button
                     onClick={() => toggleExpand(index)}
-                    className="mt-2 hover:underline focus:outline-none text-xl"
+                    className="mt-2 flex items-center gap-1 text-purple-600 hover:underline"
                   >
-                    {isExpanded ? "Show Less ▲" : "Show More ▼"}
+                    {isExpanded ? (
+                      <>
+                        Show Less <FaChevronUp className="text-sm" />
+                      </>
+                    ) : (
+                      <>
+                        Show More <FaChevronDown className="text-sm" />
+                      </>
+                    )}
                   </button>
                 </div>
               </CardContent>
