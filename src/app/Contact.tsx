@@ -105,7 +105,10 @@ export default function ContactMe() {
             action="https://api.web3forms.com/submit"
             method="POST"
             className="space-y-4"
-            onSubmit={() => setIsSubmitting(true)}
+            onSubmit={() => {
+              setIsSubmitting(true);
+              setFormStatus("Message sent successfully!");
+            }}
           >
             {/* Required Web3Forms Access Key */}
             <input
@@ -172,7 +175,7 @@ export default function ContactMe() {
                 className="w-full p-3 border border-gray-300 rounded-md"
                 placeholder="Enter your message"
                 required
-                minLength={10} // Prevents "hi" spam
+                minLength={10}
                 rows={5}
               ></textarea>
             </div>

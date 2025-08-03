@@ -7,7 +7,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Eclipse } from "lucide-react";
 
 const skillLogos: Record<string, string> = {
   HTML: "/logos/html.png",

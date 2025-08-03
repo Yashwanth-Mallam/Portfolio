@@ -1,6 +1,17 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
+type Particle = {
+  size: number;
+  position: { x: number; y: number };
+  offset: { x: number; y: number };
+  shift: { x: number; y: number };
+  speed: number;
+  targetSize: number;
+  fillColor: string;
+  orbit: number;
+};
+
 export default function ParticlesBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -13,7 +24,7 @@ export default function ParticlesBackground() {
     const RADIUS_SCALE_MAX = 1.5;
     const QUANTITY = 25;
 
-    let particles: any[] = [];
+    let particles: Particle[] = [];
     let mouseX = SCREEN_WIDTH * 0.5;
     let mouseY = SCREEN_HEIGHT * 0.5;
     let mouseIsDown = false;
