@@ -60,10 +60,16 @@ export default {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        anim: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-5px)" }, // subtle up movement
+        },
       },
+
       animation: {
         blink: "blink 1.5s steps(2, start) infinite",
         "spin-once": "spin-once 0.5s ease-in-out",
+        anim: "anim 2s ease-in-out infinite",
       },
       borderRadius: {
         lg: "var(--radius)",

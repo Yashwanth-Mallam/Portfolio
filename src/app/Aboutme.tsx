@@ -79,7 +79,7 @@ export default function AboutMe() {
             alt="Question Emoji"
             width={56}
             height={56}
-            className="inline-block ml-2 align-middle"
+            className="inline-block ml-2 align-middle rounded-full"
             priority
           />
         </h1>

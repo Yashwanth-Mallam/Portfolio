@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/toggle";
 import TechnicalSkills from "./TechnicalSkills";
-import Projects from "./Projects";
+import Projects from "./projects/page";
 import AboutMe from "./Aboutme";
 import ContactMe from "./Contact";
 import Experience from "./Experiance";
@@ -63,7 +63,7 @@ export default function Home() {
           <Button
             onClick={() => {
               window.open(
-                "https://drive.google.com/file/d/1iuoC9LThMKO7PpobUOearWM-1_8Fztub/view?usp=drive_link",
+                "https://drive.google.com/file/d/1hBywoxj7OZ8-dwuUzCNjWaUHnYDS5Nec/view?usp=sharing",
                 "_blank"
               );
             }}
