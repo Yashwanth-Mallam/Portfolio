@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/ui/toggle";
+// import { ModeToggle } from "@/components/ui/toggle";
 import TechnicalSkills from "./TechnicalSkills";
 import Projects from "./projects/page";
 import AboutMe from "./Aboutme";
