@@ -72,7 +72,7 @@ export default function Home() {
             <AiOutlineDownload />
             Resume
           </Button>
-          <ModeToggle />
+          {/* <ModeToggle /> */}
         </div>
       </div>
 
